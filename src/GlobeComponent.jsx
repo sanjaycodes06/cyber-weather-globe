@@ -322,9 +322,37 @@ const s = {
 }
 
 // ─── CSS keyframes (injected via <style> tag) ─────────────────────────────────
+// ─── CSS keyframes (injected via <style> tag) ─────────────────────────────────
 const KEYFRAMES = `
   @keyframes twinkle {
-    0%   { opacity: var(--from, 0.2); transform: scale(1); }
-    100% { opacity: var(--to,   0.9); transform: scale(1.3); }
+    0%, 100% { 
+      opacity: 0.15; 
+      transform: scale(0.8); 
+    }
+    50% { 
+      opacity: 0.9; 
+      transform: scale(1.2); 
+    }
   }
 `
+{/* ── Layer 2: Individual twinkling stars ── */}
+<div style={s.starCanvas} aria-hidden="true">
+  {STARS.map(star => (
+    <div
+      key={star.id}
+      style={{
+        position: 'absolute',
+        left: `${star.x}%`,
+        top: `${star.y}%`,
+        width: star.size,
+        height: star.size,
+        borderRadius: '50%',
+        backgroundColor: '#fff',
+        
+        // This links directly to our updated keyframes loop above
+        animation: `twinkle ${star.twinkleDuration}s infinite alternate ease-in-out`,
+        animationDelay: `${star.twinkleDelay}s`,
+      }}
+    />
+  ))}
+</div>
