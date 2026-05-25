@@ -1,0 +1,37 @@
+/* src/styles/popup-position.css
+ *
+ * ONE small CSS change to support near-click positioning.
+ * Add this import to App.jsx:  import "./styles/popup-position.css";
+ *
+ * OR paste these two overrides at the bottom of your cyberpunk.css.
+ * Either approach works — don't do both.
+ */
+
+/* When clickPos is provided, WeatherPopup sets style={{ top, left, transform:"none" }}.
+ * The inline style wins over these class rules, so the popup moves to the click position.
+ *
+ * When clickPos is null (search), no inline style is set, so these rules apply
+ * and the popup stays centered — exactly like before.
+ *
+ * NOTHING else in your CSS changes.
+ */
+.popup-panel {
+  /* Existing centering — kept as the fallback for search-triggered popups */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  /* Allow the panel to shrink on small screens without overflowing */
+  max-height: 90vh;
+}
+
+/* Clip-path uses percentage-based corners so it works at any size */
+.popup-panel {
+  clip-path: polygon(
+    0 14px, 14px 0,
+    calc(100% - 14px) 0, 100% 14px,
+    100% calc(100% - 14px), calc(100% - 14px) 100%,
+    14px 100%, 0 calc(100% - 14px)
+  );
+}
