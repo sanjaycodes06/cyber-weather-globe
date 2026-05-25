@@ -49,11 +49,11 @@ body {
 /* Globe canvas fills the whole screen */
 .app-root > canvas,
 .app-root > div:first-child {
-  position: absolute !important;
+  position: absolute;
   inset: 0;
 }
 
-/* ── HUD corners ──────────────────────────────────────────────── */
+/* ── corners ──────────────────────────────────────────────── */
 .hud-corner {
   position: absolute;
   z-index: 10;
@@ -268,9 +268,15 @@ body {
   box-shadow: 0 0 8px var(--cyan);
   animation: blink 1.8s ease-in-out infinite;
 }
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.3; }
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
 }
 .location-name {
   font-family: var(--font-display);

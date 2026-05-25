@@ -84,8 +84,10 @@ export default function GlobeComponent() {
               height: star.size,
               borderRadius: '50%',
               backgroundColor: '#fff',
-              opacity: star.opacity,
-              animation: `twinkle ${star.twinkleDuration}s ${star.twinkleDelay}s ease-in-out infinite alternate`,
+              
+              animation: `twinkle ${star.twinkleDuration}s infinite ease-in-out`,
+              animationDelay: `${star.twinkleDelay}s`,
+              
             }}
           />
         ))}

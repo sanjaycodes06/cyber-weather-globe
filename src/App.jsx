@@ -47,7 +47,7 @@ export default function App() {
 
   return (
     <div className="app-root">
-      {/* ── Cyberpunk HUD overlay (decorative) ────────────────────────── */}
+      {/* ── Cyberpunk overlay (decorative) ────────────────────────── */}
       <div className="hud-corner hud-tl">
         <span className="hud-label">NEURAL WEATHER SYS</span>
         <span className="hud-version">v2.0.77 ◈ ONLINE</span>
