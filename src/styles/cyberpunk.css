@@ -190,8 +190,7 @@ body {
     100% calc(100% - 16px),
     calc(100% - 16px) 100%,
     16px 100%,
-    0 calc(100% - 16px)
-    overflow-y: auto; 
+    0 calc(100% - 16px) 
   );
 }
 
