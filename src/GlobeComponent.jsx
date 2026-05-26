@@ -98,7 +98,7 @@ export default function GlobeComponent() {
       <div style={s.nebulaTeal}  aria-hidden="true" />
 
       {/* ── Layer 4: The Globe ── */}
-      <div style={{ ...s.globeWrapper, opacity: ready ? 1 : 0 }}>
+      <div className='globe-wrapper' style={{ ...s.globeWrapper, opacity: ready ? 1 : 0 }}>
         <Globe
           ref={globeRef}
           width={size.w}

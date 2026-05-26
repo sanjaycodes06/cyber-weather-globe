@@ -161,13 +161,13 @@ body {
 /* ── Popup panel ──────────────────────────────────────────────── */
 .popup-panel {
   position: fixed;
-  top: 50%;
-  left: 50%;
+  top: 20%;
+  left: 39%;
   transform: translate(-50%, -50%);
   z-index: 60;
   width: 90vw;
   max-width: 360px;
-  max-height: 100vh;
+  max-height: 85vh;
   display: flex;
   flex-direction: column;
 
@@ -180,7 +180,7 @@ body {
     0 0 80px rgba(183,0,255,0.1),
     inset 0 0 60px rgba(0,245,255,0.03);
   backdrop-filter: blur(24px) saturate(180%);
-  overflow: hidden;
+  overflow: visible;
   /* Cyberpunk corner clips */
   clip-path: polygon(
     0 16px,
@@ -191,6 +191,7 @@ body {
     calc(100% - 16px) 100%,
     16px 100%,
     0 calc(100% - 16px)
+    overflow-y: auto; 
   );
 }
 
