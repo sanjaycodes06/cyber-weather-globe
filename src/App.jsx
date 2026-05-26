@@ -80,7 +80,7 @@ export default function App() {
       <Starfield count={600} />
 
       <div className="hud-corner hud-tl" style={{ zIndex: 20 }}>
-        <span className="hud-label">TERRAPULSE</span>
+        <span className="hud-top-label">TERRAPULSE</span>
         <span className="hud-label">NEURAL WEATHER SYS</span>
         <span className="hud-version">v2.0.77 ◈ ONLINE</span>
       </div>
